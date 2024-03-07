@@ -5,8 +5,8 @@
     <classes>
       <class name="test.Actitime_login_logout">
         <methods>
-          <include name="executionstart"/>
           <include name="login_logout"/>
+          <include name="executionstart"/>
           <include name="teardown"/>
           <include name="setup"/>
           <include name="captureScreenshotOnFailure"/>

@@ -11,7 +11,7 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -31,9 +31,12 @@ public class BaseTest {
 
 	@BeforeClass
 	public void setup() {
-		WebDriverManager.chromedriver().setup();
+		//WebDriverManager.chromedriver().setup();
+		WebDriverManager.firefoxdriver().setup();
+		System.out.println(WebDriverManager.chromedriver().getWebDriver());
 		System.setProperty("webdriver.chrome.logfile", "./log_File/New.txt");
-		driver = new ChromeDriver();
+		//driver = new ChromeDriver();
+		driver = new FirefoxDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 		driver.get("https://demo.actitime.com");
